@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <title>ホタル祭りオススメ</title>
+<!-- Googleフォント読み込み -->
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+<!-- head終了タグ直前に自作のCSSを読み込み ホタル動き-->
+    <link rel="stylesheet" type="text/css" href="css/5-7.css">
+</head>
+
+<body>
+<div id="particles-js"></div>
+<div id="wrapper">
+<!-- この中にコンテンツが入ります。 ホタルの動きを入れたいところ-->
+<header>
+    
+    <h1 class="title">ほたる祭り</h1>
+    <div class="subtitle">会場では「お祭りの遊び」が体験できます！</div>
+    <div>やってみたい遊びをクリックしてね</div>
+</header>
+
+<main>
+    <ul>
+        <!-- 金魚すくい　-->
+        <li id="goldemn_btn"><img src="./img/golden_fish.jpg" alt=""width=300px></li>
+       <!-- 射的 -->
+        <li id="shateki_btn"><img src="./img/shateki.jpg" alt=""width=300px></li>
+        <!-- ヨーヨーすくい -->
+        <li id="yoyo_btn"><img src="./img/yoyo.jpeg" alt=""width=300px></li>
+    </ul>
+    <div>オススメのコース</div>
+    <div id="comment"></div>
+    <div><span id="recommend_play"></span></div>
+
+</main>
+
+<!--/wrapper--></div>
+<footer></footer>
+
+
+<script>
+
+//金魚すくいをクリックしたとき
+$("#goldemn_btn").on("click", function(){
+    //1.乱数
+    const r = Math.ceil(Math.random()*4);
+
+    //2.if分岐処理
+     let veiw_1 = "";
+    if(r==1){
+        veiw_1='<img src="./img/shateki.jpg" width=300px>';
+    }
+    if(r==2){
+        veiw_1='<img src="./img/superball.jpeg" width=300px>';
+    }
+    if(r==3){
+        veiw_1='<img src="./img/wanage.jpeg" width=300px>';
+    }
+    if(r==4){
+        veiw_1='<img src="./img/yoyo.jpeg" width=300px>';
+    }
+
+    //3.オススメ
+    $("#recommend_play").html(veiw_1);
+
+    // コメント内容
+    let veiw_2 = "";
+    if(r==1){
+        view_2='金魚すくい＋射的';
+    }
+    if(r==2){
+        view_2='金魚すくい＋スーパーボール';
+    }
+    if(r==3){
+        view_2='金魚すくい＋輪投げ';
+    }
+    if(r==4){
+        view_2='金魚すくい＋ヨーヨーすくい';
+    }
+    //コメント表示
+    $("#comment").html(view_2);
+
+});
+
+
+
+//射的をクリックした時
+$("#shateki_btn").on("click", function(){
+    //1.乱数
+    const r = Math.ceil(Math.random()*4);
+
+    //2.if分岐処理
+  
+    let veiw_1 = "";
+    if(r==1){
+        veiw_1='<img src="./img/golden_fish.jpg" width=300px>';
+    }
+    if(r==2){
+        veiw_1='<img src="./img/superball.jpeg" width=300px>';
+    }
+    if(r==3){
+        veiw_1='<img src="./img/wanage.jpeg" width=300px>';
+    }
+    if(r==4){
+        veiw_1='<img src="./img/yoyo.jpeg" width=300px>';
+    }
+
+
+    //３.オススメ表示
+    $("recommend_play").html(veiw_1);
+
+    // コメント
+    let veiw_2 = "";
+    if(r==1){
+        view_2='射的＋金魚すくい';
+    }
+    if(r==2){
+        view_2='射的＋スーパーボールすくい';
+    }
+    if(r==3){
+        view_2='射的＋輪投げ';
+    }
+    if(r==4){
+        view_2='射的＋ヨーヨーすくい';
+    }
+
+    //コメント表示
+    $("#comment").html(view_2);
+
+});
+
+
+//ヨーヨーすくいをクリックした時
+$("#yoyo_btn").on("click", function(){
+    //1.乱数
+    const r = Math.ceil(Math.random()*4);
+
+    //2.if分岐処理
+    let veiw_1 = "";
+    if(r==1){
+        veiw_1='<img src="./img/golden_fish.jpg" width=300px>';
+    }
+    if(r==2){
+        veiw_1='<img src="./img/shateki.jpg" width=300px>';
+    }
+    if(r==3){
+        veiw_1='<img src="./img/superball.jpeg" width=300px>';
+    }
+    if(r==4){
+        veiw_1='<img src="./img/wanage.jpeg" width=300px>';
+    }
+
+    //3.コンピュータの表示処理
+    $("#recommend_play").html(veiw_1);
+
+    // パーの時、r==1なら勝ち、r==2なら負け、r==3なら引き分け
+    let veiw_2 = "";
+    if(r==1){
+        view_2='ヨーヨーすくい＋金魚すくい';
+    }
+    if(r==2){
+        view_2='ヨーヨーすくい＋射的';
+    }
+    if(r==3){
+        view_2='ヨーヨーすくい＋スーパーボール';
+    }
+    if(r==4){
+        view_2='ヨーヨーすくい＋輪投げ';
+    }
+    //勝ち負けの表示処理
+    $("#comment").html(view_2);
+
+});
+</script>
+
+
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+</script>
+<script>particlesJS("particles-js",{
+	"particles":{
+		"number":{
+			"value":50,//この数値を変更するとホタルの数が増減できる
+			"density":{
+				"enable":true,
+				"value_area":1602.3971861905397
+			}
+		},
+		"color":{
+			"value":"#f3fa8b"//色
+		},
+		"shape":{
+			"type":"circle",//形状はcircleを指定
+			"stroke":{
+				"width":0,
+			}
+		},
+		"opacity":{
+			"value":1,
+			"random":true,//透過をランダムに
+			"anim":{
+				"enable":false,
+				"speed":1.10115236356258881,
+				"opacity_min":0,
+				"sync":false
+			}
+		},
+		"size":{
+			"value":4.005992965476349,
+			"random":true,//サイズをランダムに
+			"anim":{
+				"enable":true,
+				"speed":24.345709068776642,
+				"size_min":0.1,
+				"sync":false
+			}
+		},
+		"line_linked":{
+			"enable":false,
+		},
+		"move":{
+			"enable":true,
+			"speed":6,//この数値を小さくするとゆっくりな動きになる
+			"direction":"none",//方向指定なし
+			"random":true,//動きはランダムに
+			"straight":false,//動きをとどめない
+			"out_mode":"out",//画面の外に出るように描写
+			"bounce":false,//跳ね返りなし
+			"attract":{
+				"enable":false,
+				"rotateX":600,
+				"rotateY":600
+			}
+		}
+	},
+	"interactivity":{
+		"detect_on":"canvas",
+		"events":{
+			"onhover":{
+				"enable":false
+			},
+			"onclick":{
+				"enable":false
+			},
+			"resize":true
+		}
+	},
+	"retina_detect":true
+});
+</script>
+
+</body>
+
+</html>
